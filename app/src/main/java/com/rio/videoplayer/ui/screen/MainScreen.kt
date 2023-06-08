@@ -187,7 +187,7 @@ fun MainScreen(
                         Log.d("MainActivity", i.toString())
                         Surface(modifier = Modifier.clickable {
 //                                    onClick(baseContext, "${item.firstName} ${item.lastName}")
-                            navControler.navigate(route = Screen.Detail.route)
+                            navControler.navigate(route = Screen.Detail.passIDAndData(item.id, item.firstName))
                         }) {
                             CustomItem(person = item)
                             Divider(color = Color.LightGray, thickness = 0.5.dp)

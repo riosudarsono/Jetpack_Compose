@@ -12,17 +12,20 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 
 @Composable
 fun DetailScreen(
-    navController: NavController
+    navController: NavController,
+    id: Int?,
+    data: String?,
 ){
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center,
     ) {
         Column {
-            Text(text = "Detail Screen")
+            Text(text = "Detail Screen $id $data")
             Text(text = "Back Home", modifier = Modifier.clickable {
                 navController.popBackStack()
             }, color = Color.Blue)
@@ -35,6 +38,8 @@ fun DetailScreen(
 @Composable
 fun PreviewDetail(){
     DetailScreen(
-        navController = rememberNavController()
+        navController = rememberNavController(),
+        id = 0,
+        data = ""
     )
 }
